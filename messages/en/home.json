@@ -1,0 +1,20 @@
+{
+  "greeting": "Namaste, {name}",
+  "tiles": {
+    "wages": { "label": "Check my wages", "hint": "See what you should have earned" },
+    "report": { "label": "Report a problem", "hint": "Safely, in your own way" },
+    "vault": { "label": "My evidence", "hint": "Keep your documents safe" },
+    "rights": { "label": "Know my rights", "hint": "Plain-language guides" }
+  },
+  "attention": {
+    "title": "Needs your attention",
+    "none": "Nothing needs your attention.",
+    "incident": "There is an update on your report {ref}",
+    "dispute": "Your employer replied to your payslip question",
+    "difference": "Your records differ from your {month} payslip. Take a look."
+  },
+  "links": { "shifts": "All my shifts", "ledger": "My fairness ledger", "settings": "Settings" },
+  "noOrg": "Your account is not linked to an employer yet. You can join with a code from your employer.",
+  "joinCode": "Join with a code",
+  "staffOnly": "This account is for the review console."
+}

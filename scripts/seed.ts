@@ -30,10 +30,10 @@ if (!serviceKey || !password) {
 
 const admin = createClient(url, serviceKey, { auth: { persistSession: false, autoRefreshToken: false } });
 
-async function must<T>(p: PromiseLike<{ data: T; error: { message: string } | null }>, what: string): Promise<T> {
+async function must<T>(p: PromiseLike<{ data: T; error: { message: string } | null }>, what: string): Promise<NonNullable<T>> {
   const { data, error } = await p;
-  if (error) throw new Error(`${what}: ${error.message}`);
-  return data;
+  if (error || data === null) throw new Error(`${what}: ${error?.message ?? 'no data returned'}`);
+  return data as NonNullable<T>;
 }
 
 const sha256 = (s: string | Uint8Array) => createHash('sha256').update(s).digest('hex');

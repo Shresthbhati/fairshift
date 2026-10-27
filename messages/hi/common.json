@@ -1,0 +1,76 @@
+{
+  "appName": "FairShift",
+  "skipToContent": "मुख्य सामग्री पर जाएँ",
+  "loading": "लोड हो रहा है…",
+  "retry": "फिर कोशिश करें",
+  "cancel": "रद्द करें",
+  "close": "बंद करें",
+  "back": "वापस",
+  "next": "आगे",
+  "submit": "जमा करें",
+  "save": "सहेजें",
+  "delete": "हटाएँ",
+  "download": "डाउनलोड करें",
+  "copy": "कॉपी करें",
+  "copied": "कॉपी हो गया",
+  "signOut": "साइन आउट",
+  "language": "भाषा",
+  "settings": "सेटिंग्स",
+  "reviewConsole": "समीक्षा कंसोल",
+  "offline": "आप ऑफ़लाइन हैं। कुछ कामों के लिए इंटरनेट चाहिए।",
+  "demoBanner": "डेमो डेटा – यहाँ हर नाम और संख्या काल्पनिक है।",
+  "error": { "title": "कुछ गड़बड़ हो गई। आपका डेटा सुरक्षित है।" },
+  "forbidden": {
+    "title": "यह हिस्सा आपके खाते के लिए उपलब्ध नहीं है",
+    "body": "यह हिस्सा {roles} खातों के लिए है।"
+  },
+  "nav": { "label": "मुख्य मेनू", "home": "होम", "pay": "मज़दूरी", "report": "समस्या", "vault": "सबूत", "rights": "अधिकार" },
+  "stamp": {
+    "estimate": "अनुमान",
+    "issued": "जारी",
+    "paid": "भुगतान हुआ",
+    "selfReported": "खुद दर्ज किया",
+    "employerConfirmed": "नियोक्ता ने पुष्टि की",
+    "demo": "डेमो"
+  },
+  "status": {
+    "incident": {
+      "submitted": "भेजी गई",
+      "acknowledged": "मिल गई",
+      "investigating": "जाँच जारी",
+      "action_taken": "कार्रवाई हुई",
+      "resolved": "सुलझ गई",
+      "closed_no_action": "बिना कार्रवाई बंद",
+      "reopened": "फिर खोली गई",
+      "escalated": "आगे भेजी गई"
+    },
+    "dispute": {
+      "submitted": "भेजा गया",
+      "acknowledged": "मिल गया",
+      "responded": "नियोक्ता का जवाब आया",
+      "accepted_by_worker": "आपने स्वीकार किया",
+      "challenged": "आप सहमत नहीं हैं",
+      "escalated": "आगे भेजा गया",
+      "withdrawn": "वापस लिया",
+      "resolved": "सुलझ गया"
+    }
+  },
+  "roles": {
+    "worker": "कर्मचारी",
+    "supervisor": "पर्यवेक्षक",
+    "payroll": "पेरोल",
+    "investigator": "जाँच अधिकारी",
+    "org_admin": "संगठन प्रशासक"
+  },
+  "errors": {
+    "generic": "कुछ गड़बड़ हो गई। कृपया फिर कोशिश करें।",
+    "invalid": "कृपया जानकारी जाँचकर फिर कोशिश करें।",
+    "forbidden": "आप यह काम नहीं कर सकते।",
+    "rateLimited": "बहुत ज़्यादा कोशिशें हो गईं। थोड़ी देर बाद फिर कोशिश करें।",
+    "notFound": "यह नहीं मिला।",
+    "noOrg": "आपका खाता अभी किसी नियोक्ता से जुड़ा नहीं है।",
+    "invalidStep": "यह कदम अभी उपलब्ध नहीं है। कृपया पेज ताज़ा करें।",
+    "bodyRequired": "कृपया कम से कम 10 अक्षर का नोट लिखें।"
+  },
+  "lang": { "en": "English", "hi": "हिन्दी" }
+}

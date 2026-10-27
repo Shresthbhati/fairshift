@@ -13,7 +13,7 @@
     "test:e2e": "playwright test",
     "db:reset": "supabase db reset && node --no-warnings --env-file=.env.local scripts/seed.ts",
     "db:types": "supabase gen types typescript --local > src/lib/supabase/database.types.ts",
-    "check": "node scripts/check-i18n.ts && node scripts/check-no-service-role.ts"
+    "check": "node --no-warnings scripts/check-i18n.ts && node --no-warnings scripts/check-no-service-role.ts"
   },
   "dependencies": {
     "@chakra-ui/react": "3.37.0",

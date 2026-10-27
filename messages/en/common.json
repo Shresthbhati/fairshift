@@ -1,0 +1,76 @@
+{
+  "appName": "FairShift",
+  "skipToContent": "Skip to content",
+  "loading": "Loading…",
+  "retry": "Try again",
+  "cancel": "Cancel",
+  "close": "Close",
+  "back": "Back",
+  "next": "Next",
+  "submit": "Submit",
+  "save": "Save",
+  "delete": "Delete",
+  "download": "Download",
+  "copy": "Copy",
+  "copied": "Copied",
+  "signOut": "Sign out",
+  "language": "Language",
+  "settings": "Settings",
+  "reviewConsole": "Review console",
+  "offline": "You are offline. Some actions need internet.",
+  "demoBanner": "DEMO DATA – every name and number here is made up.",
+  "error": { "title": "Something went wrong. Your data is safe." },
+  "forbidden": {
+    "title": "This area is not available to your account",
+    "body": "This area is for {roles} accounts."
+  },
+  "nav": { "label": "Main navigation", "home": "Home", "pay": "Pay", "report": "Report", "vault": "Vault", "rights": "Rights" },
+  "stamp": {
+    "estimate": "Estimate",
+    "issued": "Issued",
+    "paid": "Paid",
+    "selfReported": "Self-reported",
+    "employerConfirmed": "Employer-confirmed",
+    "demo": "Demo"
+  },
+  "status": {
+    "incident": {
+      "submitted": "Sent",
+      "acknowledged": "Received",
+      "investigating": "Being looked into",
+      "action_taken": "Action taken",
+      "resolved": "Resolved",
+      "closed_no_action": "Closed, no action",
+      "reopened": "Reopened",
+      "escalated": "Escalated"
+    },
+    "dispute": {
+      "submitted": "Sent",
+      "acknowledged": "Received",
+      "responded": "Employer replied",
+      "accepted_by_worker": "You accepted",
+      "challenged": "You disagreed",
+      "escalated": "Escalated",
+      "withdrawn": "Withdrawn",
+      "resolved": "Resolved"
+    }
+  },
+  "roles": {
+    "worker": "worker",
+    "supervisor": "supervisor",
+    "payroll": "payroll",
+    "investigator": "investigator",
+    "org_admin": "organisation admin"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "invalid": "Please check the details and try again.",
+    "forbidden": "You cannot do this.",
+    "rateLimited": "Too many attempts. Please wait a while and try again.",
+    "notFound": "We could not find that.",
+    "noOrg": "Your account is not linked to an employer yet.",
+    "invalidStep": "That step is not available right now. Please refresh the page.",
+    "bodyRequired": "Please write a note of at least 10 characters."
+  },
+  "lang": { "en": "English", "hi": "हिन्दी" }
+}

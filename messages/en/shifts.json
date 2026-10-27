@@ -1,0 +1,40 @@
+{
+  "title": "Your shifts",
+  "none": "No shift running",
+  "running": "Shift running since",
+  "elapsed": "{duration} so far",
+  "start": "Start shift",
+  "end": "End shift",
+  "started": "Shift started",
+  "ended": "Shift saved. Thank you.",
+  "saved": "Shift saved",
+  "endTitle": "End your shift",
+  "endBody": "How long was your unpaid break?",
+  "minutesOption": "{n} min",
+  "breakShort": "{n} min break",
+  "monthEmpty": "No shifts recorded this month.",
+  "open": "running",
+  "add": "Add a missed shift",
+  "addTitle": "Add a missed shift",
+  "date": "Date",
+  "startTime": "Start time",
+  "endTime": "End time",
+  "endNextDay": "Ends the next day (night shift)",
+  "breakMinutes": "Unpaid break (minutes)",
+  "note": "Note (optional)",
+  "manualHint": "Shifts you add yourself are marked “Added by you”. Times are India time.",
+  "editedByEmployer": "Edited by employer",
+  "confirmed": "Confirmed",
+  "timeSource": {
+    "server_clock": "Recorded by FairShift",
+    "manual_entry": "Added by you",
+    "device_clock": "Time from your phone"
+  },
+  "errors": {
+    "alreadyOpen": "You already have a shift running.",
+    "endBeforeStart": "The end time must be after the start time.",
+    "tooLong": "A shift can be at most 24 hours. Please ask your supervisor to correct it.",
+    "inFuture": "The start time cannot be in the future.",
+    "breakTooLong": "The break must be shorter than the shift."
+  }
+}
