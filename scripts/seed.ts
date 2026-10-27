@@ -19,8 +19,13 @@ try {
 } catch {
   /* handled below */
 }
-if (process.env.NEXT_PUBLIC_DEMO_MODE !== 'true' || !['127.0.0.1', 'localhost'].includes(host)) {
-  console.error('Refusing to seed: needs NEXT_PUBLIC_DEMO_MODE=true and a localhost Supabase URL.');
+// Local by default. A hosted demo project is allowed only when it is named explicitly:
+// SEED_REMOTE_PROJECT_REF must equal the project ref in the URL (https://<ref>.supabase.co).
+const remoteRef = process.env.SEED_REMOTE_PROJECT_REF ?? '';
+const isLocal = ['127.0.0.1', 'localhost'].includes(host);
+const isNamedRemote = remoteRef !== '' && host === `${remoteRef}.supabase.co`;
+if (process.env.NEXT_PUBLIC_DEMO_MODE !== 'true' || !(isLocal || isNamedRemote)) {
+  console.error('Refusing to seed: needs NEXT_PUBLIC_DEMO_MODE=true and a localhost URL (or SEED_REMOTE_PROJECT_REF matching the hosted project).');
   process.exit(1);
 }
 if (!serviceKey || !password) {

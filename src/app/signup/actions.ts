@@ -37,7 +37,9 @@ export async function signUp(input: unknown): Promise<ActionResult> {
     if (error && /registered|already/i.test(error.message)) return { ok: false, error: 'auth.signup.emailTaken' };
     return { ok: false, error: 'common.errors.generic' };
   }
-  if (data.session) await supabase.from('consent_records').insert({ user_id: data.user.id, notice_version: NOTICE_VERSION });
   (await cookies()).set(LOCALE_COOKIE, v.locale, { path: '/', maxAge: 60 * 60 * 24 * 365, sameSite: 'lax' });
+  // Hosted projects may require email confirmation: no session yet, so tell the person instead of bouncing them to /login.
+  if (!data.session) return { ok: false, error: 'auth.signup.confirmEmail' };
+  await supabase.from('consent_records').insert({ user_id: data.user.id, notice_version: NOTICE_VERSION });
   return { ok: true };
 }
