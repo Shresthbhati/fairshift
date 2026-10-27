@@ -12,8 +12,9 @@ const config = defineConfig({
           700: { value: '#185641' }, 800: { value: '#12412F' },
         },
         stamp: { blue: { value: '#2F4AA0' } },
-        success: { value: '#2E7D4F' },
-        warning: { value: '#A86A00' },
+        // Darker than the plan's #2E7D4F / #A86A00: measured contrast on paper-100 was 4.36 / 3.84, below WCAG AA (4.5).
+        success: { value: '#226A45' },
+        warning: { value: '#855200' },
         danger: { value: '#B3261E' },
         info: { value: '#2F6DB5' },
       },
