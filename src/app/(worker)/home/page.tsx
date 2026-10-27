@@ -7,7 +7,8 @@ import { createClient } from '@/lib/supabase/server';
 import { loadMonth, monthBounds } from '../pay/data';
 import { HomeView, type AttentionItem } from './home-view';
 
-export const LAST_SEEN_COOKIE = 'fs_last_seen';
+const LAST_SEEN_COOKIE = 'fs_last_seen'; // a page file may only export the page itself
+const daysAgoIso = (n: number) => new Date(Date.now() - n * 86_400_000).toISOString();
 
 export default async function HomePage() {
   const ctx = await requireUser();
@@ -15,7 +16,7 @@ export default async function HomePage() {
   const t = await getT();
   const supabase = await createClient();
   const store = await cookies();
-  const since = store.get(LAST_SEEN_COOKIE)?.value ?? new Date(Date.now() - 7 * 86_400_000).toISOString();
+  const since = store.get(LAST_SEEN_COOKIE)?.value ?? daysAgoIso(7);
 
   const [open, events, responded, slips] = await Promise.all([
     supabase.from('shifts').select('id, started_at').eq('worker_id', ctx.userId).is('ended_at', null).maybeSingle(),

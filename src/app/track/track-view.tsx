@@ -1,32 +1,40 @@
 'use client';
 
 import NextLink from 'next/link';
-import { useEffect, useState, useTransition } from 'react';
+import { useMemo, useState, useSyncExternalStore, useTransition } from 'react';
 import { Box, Field, Heading, HStack, Input, Stack, Text, Textarea } from '@chakra-ui/react';
 import { DateText, FsButton, PaperCard, StatusBadge } from '@/components/fs/primitives';
 import { LanguageSwitch } from '@/components/fs/shell';
 import { useT } from '@/lib/i18n-client';
 import { trackIncident, trackRespond, type TrackData } from './actions';
 
+const subscribeNothing = () => () => {};
+const readSavedAnon = () => {
+  try {
+    return localStorage.getItem('fs.anon') ?? '[]';
+  } catch {
+    return '[]';
+  }
+};
+
 export function TrackView({ initialRef }: { initialRef: string }) {
   const t = useT();
   const [reference, setReference] = useState(initialRef);
-  const [token, setToken] = useState('');
+  // If this device saved the code (opt-in), prefill it. Nothing is read from or written to the URL.
+  const savedRaw = useSyncExternalStore(subscribeNothing, readSavedAnon, () => '[]');
+  const savedToken = useMemo(() => {
+    try {
+      return (JSON.parse(savedRaw) as { ref: string; token: string }[]).find((s) => s.ref === initialRef)?.token ?? '';
+    } catch {
+      return '';
+    }
+  }, [savedRaw, initialRef]);
+  const [typedToken, setToken] = useState<string | null>(null);
+  const token = typedToken ?? savedToken;
   const [data, setData] = useState<TrackData | null>(null);
   const [note, setNote] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [pending, start] = useTransition();
-
-  // If this device saved the code (opt-in), prefill it. Nothing is read from or written to the URL.
-  useEffect(() => {
-    if (!initialRef) return;
-    try {
-      const hit = (JSON.parse(localStorage.getItem('fs.anon') ?? '[]') as { ref: string; token: string }[]).find((s) => s.ref === initialRef);
-      if (hit) setToken(hit.token);
-    } catch {
-      /* no saved code */
-    }
-  }, [initialRef]);
 
   const check = () =>
     start(async () => {

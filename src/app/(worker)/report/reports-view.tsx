@@ -1,23 +1,33 @@
 'use client';
 
 import NextLink from 'next/link';
-import { useEffect, useState } from 'react';
+import { useMemo, useSyncExternalStore } from 'react';
 import { Heading, HStack, Stack, Text } from '@chakra-ui/react';
 import { DateText, EmptyState, FsButton, PaperCard, StatusBadge } from '@/components/fs/primitives';
 import { useT } from '@/lib/i18n-client';
 
 type Report = { ref: string; category: string; status: string; mode: string; date: string };
 
+const subscribeNothing = () => () => {};
+const readSavedAnon = () => {
+  try {
+    return localStorage.getItem('fs.anon') ?? '[]';
+  } catch {
+    return '[]';
+  }
+};
+
 export function ReportsView({ reports }: { reports: Report[] }) {
   const t = useT();
-  const [saved, setSaved] = useState<{ ref: string }[]>([]);
-  useEffect(() => {
+  // Opt-in anonymous references saved on this device. Read as an external store so SSR renders an empty list.
+  const raw = useSyncExternalStore(subscribeNothing, readSavedAnon, () => '[]');
+  const saved = useMemo<{ ref: string }[]>(() => {
     try {
-      setSaved(JSON.parse(localStorage.getItem('fs.anon') ?? '[]'));
+      return JSON.parse(raw);
     } catch {
-      setSaved([]);
+      return [];
     }
-  }, []);
+  }, [raw]);
 
   return (
     <Stack gap="4">

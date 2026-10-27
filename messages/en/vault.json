@@ -1,0 +1,59 @@
+{
+  "title": "My evidence",
+  "intro": "Keep your documents here. Only you can see them. Your employer cannot.",
+  "search": "Search by title",
+  "filter": "Type",
+  "all": "All types",
+  "kinds": {
+    "payslip": "Payslip",
+    "attendance": "Attendance record",
+    "agreement": "Agreement or letter",
+    "photo": "Photo",
+    "certificate": "Certificate",
+    "other": "Other"
+  },
+  "upload": "Upload a document",
+  "file": "File",
+  "fileHelp": "PDF, JPEG, PNG or WEBP, up to 10 MB.",
+  "docTitle": "Title",
+  "kind": "Type",
+  "save": "Upload",
+  "uploaded": "Document uploaded",
+  "empty": "You have not added any documents yet.",
+  "noMatch": "Nothing matches your search.",
+  "download": "Download",
+  "deleteBtn": "Delete",
+  "deleteTitle": "Delete this document?",
+  "deleteBody": "It will be removed from your vault. This cannot be undone from the app.",
+  "deleteConfirm": "Delete document",
+  "deleted": "Document deleted",
+  "stampNote": "“Self-reported” means you added it yourself. FairShift has not checked it.",
+  "links": { "ledger": "Fairness Ledger", "export": "Export my records" },
+  "errors": { "title": "Please give the document a short title." },
+  "export": {
+    "title": "Export my records",
+    "intro": "Choose what to include. You can download the data or open a printable statement.",
+    "categories": {
+      "shifts": "Shifts",
+      "payslips": "Payslips",
+      "disputes": "Wage questions",
+      "incidents": "My reports (named and confidential only)",
+      "documents": "Document list (titles and details, not the files)"
+    },
+    "count": "{n} items",
+    "download": "Download data (JSON)",
+    "statement": "Open printable statement",
+    "note": "Anonymous reports are not included because nothing links them to you. Exports are recorded in your history.",
+    "none": "Select at least one category."
+  },
+  "statement": {
+    "title": "Statement of my records",
+    "for": "Prepared for",
+    "on": "Prepared on",
+    "disclaimer": "This statement was compiled by the worker using FairShift. Items marked self-reported were entered by the worker and have not been verified by FairShift or by an employer.",
+    "print": "Print",
+    "back": "Back",
+    "worked": "Worked",
+    "empty": "No records."
+  }
+}

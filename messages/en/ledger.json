@@ -1,0 +1,18 @@
+{
+  "title": "Fairness Ledger",
+  "intro": "A timeline of what has been recorded about your work, and who recorded it.",
+  "empty": "Nothing has been recorded yet.",
+  "source": { "you": "You", "employer": "Employer", "fairshift": "FairShift" },
+  "entries": {
+    "shift": "Shift recorded: {range}",
+    "shiftEdited": "Shift edited by your employer: {range}",
+    "payslip": "Payslip for {month}. Take-home: {net}",
+    "dispute": "Your question about a payslip ({part})",
+    "incident": "Report {ref}: {category}",
+    "incidentUpdate": "Update on report {ref}",
+    "disputeUpdate": "Your employer responded to your payslip question"
+  },
+  "older": "Older entries",
+  "newer": "Newer entries",
+  "back": "Back to Home"
+}
