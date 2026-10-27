@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import { expect, test } from '@playwright/test';
-import { fileReport, login, logout, REF, useLocale } from './helpers';
+import { fileReport, login, logout, useLocale } from './helpers';
 
 test.beforeEach(async ({ context }) => {
   await useLocale(context, 'en');
@@ -84,8 +84,8 @@ test('E2E-4 Ravi stores a document privately and exports his records', async ({ 
   await page.goto('/vault');
   await page.getByRole('button', { name: 'Upload a document' }).click();
   const pdf = Buffer.from('%PDF-1.4\n1 0 obj<</Type/Catalog>>endobj\ntrailer<</Root 1 0 R>>\n%%EOF');
-  await page.getByLabel('File').setInputFiles({ name: 'any-name.png', mimeType: 'image/png', buffer: pdf }); // wrong name and type on purpose
-  await page.getByLabel('Title').fill('E2E contract copy');
+  await page.getByLabel('File', { exact: true }).setInputFiles({ name: 'any-name.png', mimeType: 'image/png', buffer: pdf }); // wrong name and type on purpose
+  await page.getByRole('textbox', { name: 'Title', exact: true }).fill('E2E contract copy');
   await page.getByRole('button', { name: 'Upload', exact: true }).click();
   await expect(page.getByText('E2E contract copy')).toBeVisible();
   await expect(page.getByText('Self-reported').first()).toBeVisible();
@@ -105,7 +105,7 @@ test('E2E-5 a payslip question: payroll can resolve only after the worker accept
   await page.getByRole('button', { name: 'Ask about this difference' }).click();
   await page.getByLabel(/what would you like to ask/i).fill('Six long days of overtime are missing from my payslip.');
   await page.getByRole('button', { name: 'Send question' }).click();
-  await expect(page.getByText('Your question about this payslip')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Your question about this payslip' })).toBeVisible();
   const disputeUrl = page.url();
   await logout(page);
 
@@ -142,5 +142,5 @@ test('E2E-6 Hindi: the language switch changes the home screen and the page lang
   await expect(page.locator('html')).toHaveAttribute('lang', 'hi');
   await expect(page.getByText('मेरी मज़दूरी जाँचें')).toBeVisible();
   await expect(page.getByText('समस्या बताएँ').first()).toBeVisible();
-  await expect(page.getByText(REF)).toHaveCount(0);
+  await expect(page.getByText('Check my wages')).toHaveCount(0); // nothing left in English on the tiles
 });
