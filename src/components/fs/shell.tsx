@@ -1,9 +1,9 @@
 'use client';
 
 import NextLink from 'next/link';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useTransition } from 'react';
-import { Box, HStack, Text } from '@chakra-ui/react';
+import { Box, HStack, Stack, Text } from '@chakra-ui/react';
 import { setLocale, signOut } from '@/app/login/actions';
 import { useT } from '@/lib/i18n-client';
 import type { Locale } from '@/lib/i18n';
@@ -82,6 +82,28 @@ export function TopBar({ name, showReview }: { name: string; showReview?: boolea
           <SignOutButton />
         </HStack>
       </HStack>
+    </Box>
+  );
+}
+
+/** Tabs on phones, a left column from lg up. Only sections the user's roles allow are passed in. */
+export function ReviewNav({ sections }: { sections: { href: string; key: string }[] }) {
+  const t = useT();
+  const pathname = usePathname();
+  return (
+    <Box as="nav" aria-label={t('review.nav.label')} className="no-print">
+      <Stack direction={{ base: 'row', lg: 'column' }} gap="2" overflowX={{ base: 'auto', lg: 'visible' }} pb="1">
+        {sections.map((s) => {
+          const current = pathname === s.href || pathname.startsWith(`${s.href}/`);
+          return (
+            <FsButton key={s.href} asChild size="sm" variant={current ? 'primary' : 'secondary'} justifyContent="flex-start" flexShrink={0}>
+              <NextLink href={s.href} aria-current={current ? 'page' : undefined}>
+                {t(s.key)}
+              </NextLink>
+            </FsButton>
+          );
+        })}
+      </Stack>
     </Box>
   );
 }

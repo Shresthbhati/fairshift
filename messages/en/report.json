@@ -1,0 +1,108 @@
+{
+  "title": "Report a problem",
+  "mine": "My reports",
+  "none": "You have not sent any reports.",
+  "new": "Report a problem",
+  "saved": "Anonymous reports saved on this device",
+  "check": "Check status",
+  "ref": "Reference",
+  "view": "View",
+  "step": "Step {n} of 4",
+  "steps": {
+    "category": "What kind of problem?",
+    "mode": "Who can see your name?",
+    "details": "Tell us what happened",
+    "review": "Check and send"
+  },
+  "category": {
+    "physical_hazard": "Physical hazard: something could hurt someone",
+    "unsafe_equipment": "Unsafe equipment",
+    "harassment": "Harassment or bullying",
+    "wages": "Wages or payment problem",
+    "excessive_hours": "Excessive hours or no rest",
+    "discrimination": "Unfair treatment",
+    "other": "Something else"
+  },
+  "severity": { "label": "How serious is it?", "low": "Low", "medium": "Medium", "high": "High", "urgent": "Urgent" },
+  "urgent": "If someone is in immediate danger, call 112 now.",
+  "mode": {
+    "label": "How should we handle your name?",
+    "identified": {
+      "title": "Named",
+      "privacy": "Your name is shared with the investigator and may be shared with management to fix the problem."
+    },
+    "confidential": {
+      "title": "Confidential",
+      "privacy": "Only the investigator sees your name. Your supervisor and payroll team cannot see this report."
+    },
+    "anonymous": {
+      "title": "Anonymous",
+      "privacy": "FairShift does not store who sent this report. Limits: details you write (where, when, who) can still identify you, especially in small teams. You cannot add files or use voice in this mode. Keep your tracking code safe; it cannot be recovered."
+    }
+  },
+  "description": "What happened?",
+  "descriptionHelp": "Write at least 10 characters. If you chose Anonymous, leave out details that could identify you.",
+  "location": "Where did it happen? (optional)",
+  "attachments": "Add photos or documents (optional)",
+  "attachmentsHelp": "PDF, JPEG, PNG or WEBP, up to 10 MB each.",
+  "attachmentsOff": "Files cannot be added to anonymous reports, so nothing can link the report back to you.",
+  "reviewTitle": "Please check before sending",
+  "send": "Send report",
+  "done": {
+    "title": "Report sent",
+    "ref": "Your reference code",
+    "trackingCode": "Your tracking code",
+    "trackingWarn": "This code is shown only once. Write it down or copy it. It cannot be recovered.",
+    "saved": "I have saved this code",
+    "saveOnDevice": "Save on this device (do not use on a shared phone)",
+    "finish": "Done",
+    "viewReport": "View my report",
+    "namedNote": "You can follow this report under My reports."
+  },
+  "errors": {
+    "tooShort": "Please write at least 10 characters.",
+    "chooseCategory": "Please choose a problem type.",
+    "chooseMode": "Please choose how we should handle your name.",
+    "fileType": "That file type is not allowed. Use PDF, JPEG, PNG or WEBP.",
+    "fileSize": "That file is larger than 10 MB.",
+    "uploadFailed": "Your report was sent, but a file could not be added."
+  },
+  "case": {
+    "title": "Your report",
+    "status": "Status",
+    "description": "What you wrote",
+    "location": "Location",
+    "files": "Files",
+    "noFiles": "No files were added.",
+    "openFile": "Open file",
+    "addFile": "Add another file",
+    "timeline": "Updates",
+    "noUpdates": "No updates yet.",
+    "actions": "What would you like to do?",
+    "confirm": "This is resolved",
+    "reopen": "Reopen: the problem is back",
+    "escalate": "Take this further",
+    "comment": "Add a comment",
+    "note": "Note",
+    "reopenNote": "Tell us why you are reopening (at least 10 characters).",
+    "escalateInfo": "If you want to take this further, you can contact your state labour department, a registered trade union, or a legal aid service. If someone is in immediate danger, call 112.",
+    "done": "Done",
+    "investigator": "Investigator",
+    "you": "You",
+    "system": "FairShift",
+    "back": "Back to my reports"
+  },
+  "track": {
+    "title": "Check an anonymous report",
+    "intro": "Enter the reference code and the tracking code you saved when you sent your report.",
+    "reference": "Reference code",
+    "token": "Tracking code",
+    "check": "Check status",
+    "notFound": "We could not find a report with that reference and code.",
+    "status": "Status",
+    "updates": "Updates",
+    "noUpdates": "No updates yet. Please check again later.",
+    "reply": "Add a comment",
+    "signIn": "Sign in"
+  }
+}

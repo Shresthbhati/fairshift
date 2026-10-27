@@ -64,3 +64,14 @@ export const isStaff = (ctx: Ctx) => hasRole(ctx, STAFF_ROLES);
 /** The first active membership with one of the roles, if any. */
 export const membershipFor = (ctx: Ctx, roles: Role[]) => ctx.memberships.find((m) => roles.includes(m.role));
 export const workerOrg = (ctx: Ctx) => membershipFor(ctx, ['worker']);
+
+/** Review console sections and who may open them. UX only: the database enforces the same rules. */
+export const REVIEW_SECTIONS: { href: string; key: string; roles: Role[] }[] = [
+  { href: '/review/incidents', key: 'review.nav.incidents', roles: ['investigator'] },
+  { href: '/review/disputes', key: 'review.nav.disputes', roles: ['payroll', 'org_admin'] },
+  { href: '/review/payslips', key: 'review.nav.payslips', roles: ['payroll', 'org_admin'] },
+  { href: '/review/attendance', key: 'review.nav.attendance', roles: ['supervisor', 'payroll', 'org_admin'] },
+  { href: '/review/insights', key: 'review.nav.insights', roles: ['org_admin', 'investigator'] },
+];
+
+export const allowedSections = (ctx: Ctx) => REVIEW_SECTIONS.filter((s) => hasRole(ctx, s.roles));
